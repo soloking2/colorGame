@@ -1,0 +1,97 @@
+Color Game
+
+var numSquares specifies the default number of squares to show.
+var colors was assigned to generateRandomColors function with the parameter
+being the numSquares.
+var colorDispay assigned the best fit color on span in the h1 tag
+var squares select all shapes with the class of square.
+var pickedColor was assigned the pickColor function.
+var message specifies the messages to be displayed at selection. It could
+either be a 'Try again' or 'correct'.
+
+var h1 selects the h1 tag in the page.
+var resetButton selects the button with the id of reset.
+var easyBtn selects the button with the id of easyBtn.
+var hardBtn selects the button with the id of hardBtn.
+
+event listener of click was added to easyBtn with an anonymous function which:
+- Adds the class of selected to the the easyBtn
+- Removes the class of selected from the hardBtn
+- Clears the text content of the message
+- Assigns numSquares a different number of squares
+- Assigns the colors to the generateRandomColors function with numSquares as parameter
+- Reasigned the pickColor to pickColor function.
+- Displayed the pickedColor as text content of the colorDisplay
+- Looped through the squares and assigned random colors to the squares and set the generated colors
+as background colors of the square if there are square available. If there no squares, change the
+display to none.
+
+event listener of click was added to hardBtn with an anonymous function which:
+- Removes the class of selected from the easyBtn
+- Adds the class of selected to the hardBtn
+- Cleared the text content of the message
+- Assigns numSquares a different number of squares
+- Assigns the colors to the generateRandomColors function with numSquares as parameter
+- Reasigned the pickColor to pickColor function.
+- Displayed the pickedColor as text content of the colorDisplay
+- Looped through the squares and assigned random colors to the squares and set the generated colors
+as background colors of the square. Placed the display to block.
+
+event listener of click was added to resetButton with an anonymous function which:
+- Assigns the colors to the generateRandomColors function with numSquares as parameter
+- Reasigned the pickColor to pickColor function.
+- Displayed the pickedColor as text content of the colorDisplay
+- Changed the text content of the resetButton to 'New Colors' once clicked.
+- Looped through the squares and assigned random colors to the squares and set the generated colors
+as background colors of the square.
+- Cleared the text content of the message
+- Assigned the h1 the default style of "steelblue".
+
+Logic for Color Selection
+Looped through all the squares.
+Assigned the random generated colors to the background of each square.
+On each square an event listener of click was assigned and anonymous function
+was called which:
+- Sets a clickedColor variable and assigned it to the background color of the
+particular color clicked.
+- The clickedColor was compared with the pickedColor. If it was true:
+	- change the text content of the message to 'correct'.
+	- change the text content of the resetbutton to 'Play Again?'.
+	- call the changeColors function and assigned it the clickedColor which
+	  automatically changes the background color of the squares to the
+	  clickedColor.
+	- changes the background color of the h1 to the clickedColor.
+	If not true:
+	- Sets the background color of the selected square to the page's background color.
+	- Changes the text content of the message to 'Try Again'.
+
+
+changeColors function
+Assigned a parameter of color on the changeColors function.
+Looped through the squares and assigned to the backgroud color of each the 
+color parameter.
+
+pickColor function
+created a variable random, and assigned it to the Math.floor method.
+The Math.floor method has the Math.random method which was multiplied by the length of the colors.
+The random variable was passed into the colors to randomly pick a color.
+
+
+generateRandomColors function
+Assigned a parameter of num on the the function.
+created an empty array.
+Looped through the num and push the randomColor function into the empty array.
+Outside the loop returned the array;
+
+randomColor function
+created a variable of r and checked for a "red" from 0-255;
+created a variable of g and checked for a "green" from 0-255;
+created a variable of b and checked for a "blue" from 0-255;
+Then returned the "rgb" value from the randomly selected r, g, b variables
+
+
+
+MOTIVATIONS
+I learnt alot from this script. Ability to look through squares and assign different colors from an array of randomly selected red, green and blue colors.
+Changing the numbers of squares when one click on the easy or hard button really was challenging. Once I figured that out, I was able to utilize the knowledge in other aspects of my coding experience.
+
